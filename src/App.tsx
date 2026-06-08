@@ -1,30 +1,14 @@
-import Hero from './components/sections/Hero'
-import Page from './components/Page'
-import DeliverablesSection from './components/sections/DeliverablesSection'
-import EvidenceSection from './components/sections/EvidenceSection'
-import Footer from './components/sections/Footer'
-import IdeationSection from './components/sections/IdeationSection'
-import JourneySection from './components/sections/JourneySection'
-import OverviewSection from './components/sections/OverviewSection'
-import PersonasSection from './components/sections/PersonasSection'
-import SystemSection from './components/sections/SystemSection'
-import VisualLanguageSection from './components/sections/VisualLanguageSection'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import DesignRationalePage from './pages/DesignRationalePage'
+import HomePage from './pages/HomePage'
 
 export default function App() {
   return (
-    <Page>
-      <Hero />
-      <main id="content">
-        <OverviewSection />
-        <EvidenceSection />
-        <PersonasSection />
-        <JourneySection />
-        <VisualLanguageSection />
-        <IdeationSection />
-        <SystemSection />
-        <DeliverablesSection />
-      </main>
-      <Footer />
-    </Page>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/design-rationale" element={<DesignRationalePage />} />
+      </Routes>
+    </BrowserRouter>
   )
 }

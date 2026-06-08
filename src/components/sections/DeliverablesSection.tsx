@@ -1,10 +1,10 @@
+import { FIGMA_ENBD_DASHBOARD_URL } from '../../constants/figma'
 import imgEnbdDesktopDashboard from '../../assets/enbd-desktop-dashboard.png'
 import imgEnbdMobileDashboard from '../../assets/enbd-mobile-dashboard.png'
 import Container from '../layout/Container'
 import SectionHeader from '../layout/SectionHeader'
 
-const FIGMA_ENBD_DESIGN_URL =
-  'https://www.figma.com/design/kBNUKH829tIhd5ASEm2eP7/NBD?node-id=74-2138'
+const FIGMA_ENBD_DESIGN_URL = FIGMA_ENBD_DASHBOARD_URL
 
 const deliverables = [
   { num: '01', title: 'Proto-Personas', tag: 'Research', color: '#ffb900' },

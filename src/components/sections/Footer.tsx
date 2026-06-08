@@ -1,11 +1,13 @@
+import { Link } from 'react-router-dom'
 import Container from '../layout/Container'
 
 const navLinks = [
-  { label: 'Process', href: '#overview' },
-  { label: 'Personas', href: '#personas' },
-  { label: 'Journey', href: '#journey' },
-  { label: 'System', href: '#system' },
-]
+  { label: 'Process', to: '/#overview' },
+  { label: 'Personas', to: '/#personas' },
+  { label: 'Journey', to: '/#journey' },
+  { label: 'System', to: '/#system' },
+  { label: 'Rationale', to: '/design-rationale' },
+] as const
 
 export default function Footer() {
   return (
@@ -15,13 +17,13 @@ export default function Footer() {
         <nav aria-label="Footer">
           <ul className="flex flex-wrap gap-6">
             {navLinks.map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
+              <li key={link.to}>
+                <Link
+                  to={link.to}
                   className="text-[10px] uppercase tracking-widest text-white/40 transition-colors hover:text-white/70"
                 >
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
