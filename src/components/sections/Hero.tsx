@@ -25,7 +25,12 @@ export default function Hero() {
           </div>
 
           <h1 className="mt-8 font-['Playfair_Display'] font-black leading-[1.05]">
-            <span className="block text-[clamp(2.25rem,6vw,5.5rem)] text-white">Rebranding</span>
+            <span className="block text-[clamp(2.25rem,6vw,5.5rem)] text-white">
+              <span className="text-[#c9902b]">ENBD X</span>
+              <span className="text-white/60"> & </span>
+              <span className="text-[#05df72]">EI</span>
+              <span> Rebranding</span>
+            </span>
             <span className="mt-1 block text-[clamp(2.25rem,6vw,5.5rem)] italic text-[#c9902b]">
               Two Identities,
             </span>
