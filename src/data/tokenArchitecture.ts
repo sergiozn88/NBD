@@ -23,10 +23,7 @@ export const collectionLayers: CollectionLayer[] = [
     subtitle: 'Semantic aliases',
     theme: 'brand',
     pills: ['Primary / Hover', 'Surface / Text', 'Border / Error', 'ENBD mode', 'EI mode'],
-    modes: [
-      { label: 'ENBD', active: true },
-      { label: 'EI', active: true },
-    ],
+    modes: [{ label: 'ENBD' }, { label: 'EI' }],
   },
   {
     step: '03',
@@ -41,10 +38,7 @@ export const collectionLayers: CollectionLayer[] = [
     subtitle: 'Web + iOS modes',
     theme: 'blue',
     pills: ['Display/Large', 'Heading/H1–H4', 'Body/Sm–Lg', 'Label/Sm–Lg', 'Numeric'],
-    modes: [
-      { label: 'Web', active: true },
-      { label: 'iOS' },
-    ],
+    modes: [{ label: 'Web' }, { label: 'iOS' }],
   },
   {
     step: '05',
