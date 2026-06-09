@@ -1,15 +1,14 @@
 import { useState } from 'react'
 import Container from '../layout/Container'
 import SectionHeader from '../layout/SectionHeader'
+import CollectionHierarchy from '../tokenArchitecture/CollectionHierarchy'
 import {
   brandTokens,
-  collectionLayers,
   elevationScale,
   radiusScale,
   radiusTokens,
   spacingScale,
   spacingTokens,
-  threeRules,
   typographyRows,
   type TypographyPlatform,
 } from '../../data/tokenArchitecture'
@@ -37,80 +36,7 @@ export default function TokenArchitectureSection() {
           description="A five-collection token system built for multi-brand Web and iOS — every value aliases upward, never hardcoded."
         />
 
-        {/* Collection Hierarchy */}
-        <div className="mt-16">
-          <h3 className="text-xs font-semibold uppercase tracking-widest text-[#64748b]">
-            Collection Hierarchy
-          </h3>
-          <div className="mt-6 -mx-4 overflow-x-auto px-4 pb-2">
-            <div className="flex min-w-max items-stretch gap-3">
-              {collectionLayers.map((layer, i) => (
-                <div key={layer.title} className="flex items-stretch gap-3">
-                  <article
-                    className="flex w-[220px] flex-col rounded-xl p-5 text-white"
-                    style={{ backgroundColor: layer.bg }}
-                  >
-                    <div>
-                      <p className="text-[10px] font-semibold uppercase tracking-widest text-white/60">
-                        Layer {i + 1}
-                      </p>
-                      <h4 className="mt-2 text-lg font-bold">{layer.title}</h4>
-                      <p className="mt-1 text-xs text-white/70">{layer.subtitle}</p>
-                    </div>
-                    {'modes' in layer && layer.modes ? (
-                      <div className="mt-4 flex gap-2">
-                        {layer.modes.map((mode) => (
-                          <span
-                            key={mode}
-                            className="rounded-md bg-white/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-wide"
-                          >
-                            {mode}
-                          </span>
-                        ))}
-                      </div>
-                    ) : null}
-                    <ul className="mt-4 flex-1 space-y-1.5 text-[11px] leading-snug text-white/85">
-                      {layer.items.map((item) => (
-                        <li key={item} className="flex gap-1.5">
-                          <span className="text-white/40">·</span>
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <p className="mt-4 border-t border-white/15 pt-3 text-[10px] text-white/50">
-                      {layer.footnote}
-                    </p>
-                  </article>
-                  {i < collectionLayers.length - 1 ? (
-                    <span
-                      className="flex items-center text-xl text-[#c9902b]"
-                      aria-hidden="true"
-                    >
-                      →
-                    </span>
-                  ) : null}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Three Rules */}
-        <div className="mt-10 rounded-xl border border-[#e8e4dc] bg-[#fafaf8] p-6 md:p-8">
-          <p className="text-[10px] font-semibold uppercase tracking-widest text-[#c9902b]">
-            Three Rules
-          </p>
-          <ul className="mt-4 grid gap-4 sm:grid-cols-3">
-            {threeRules.map((rule, i) => (
-              <li key={rule} className="flex items-start gap-3">
-                <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-[#0c1a2e] text-xs font-bold text-white">
-                  {i + 1}
-                </span>
-                <p className="pt-1 text-sm font-medium text-[#0c1a2e]">{rule}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <CollectionHierarchy />
 
         {/* Typography System */}
         <div className="mt-16">

@@ -1,73 +1,86 @@
-export const collectionLayers = [
+export type CollectionLayerTheme = 'dark' | 'brand' | 'gold' | 'blue' | 'sand'
+
+export type CollectionLayer = {
+  step: string
+  title: string
+  subtitle: string
+  theme: CollectionLayerTheme
+  pills: string[]
+  modes?: { label: string }[]
+}
+
+export const collectionLayers: CollectionLayer[] = [
   {
+    step: '01',
     title: 'Primitive',
     subtitle: 'Raw values only',
-    bg: '#0c1a2e',
-    items: [
-      'Typography (Inter / SF Pro)',
-      'Font Size (18 steps: 4XS → 10XL)',
-      'Font Weight (Regular–Bold)',
-      'Line Height (12 steps)',
-      'Spacing (4pt grid)',
-      'Radius (None → Full)',
-      'Opacity (0–100, 11 steps)',
-      'Border Width (Thin / Medium / Thick)',
-      'Elevation (0–5)',
-    ],
-    footnote: 'No modes · No brand meaning',
+    theme: 'dark',
+    pills: ['18 font sizes', '4pt spacing', '7 radii', '6 elevations', '11 opacities'],
   },
   {
+    step: '02',
     title: 'Brand',
-    subtitle: 'Semantic color aliases',
-    bg: '#1a3a6b',
-    modes: ['ENBD', 'EI'],
-    items: [
-      'Primary / Primary Hover / Primary Pressed',
-      'Surface / Surface Hover',
-      'Text Primary / Text Secondary',
-      'Border Default',
-      'Success / Warning / Error',
+    subtitle: 'Semantic aliases',
+    theme: 'brand',
+    pills: ['Primary / Hover', 'Surface / Text', 'Border / Error', 'ENBD mode', 'EI mode'],
+    modes: [
+      { label: 'ENBD', active: true },
+      { label: 'EI', active: true },
     ],
-    footnote: 'Aliases Primitive only · Never raw values',
   },
   {
+    step: '03',
     title: 'Component',
-    subtitle: 'Aliases Brand tokens',
-    bg: '#1b6b3a',
-    items: [
-      'Button/Primary/BG → Brand/Primary',
-      'Button/Primary/Text → Brand/Text Inverse',
-      'Input/Border → Brand/Border Default',
-      'Card/BG → Brand/Surface',
-      'Nav/Active → Brand/Primary',
-    ],
-    footnote: 'Never references Primitive directly',
+    subtitle: 'UI token aliases',
+    theme: 'gold',
+    pills: ['Button/BG', 'Input/Border', 'Card/Fill', 'Nav/Active', 'Label/Color'],
   },
   {
-    title: 'Semantic Typography',
+    step: '04',
+    title: 'Typography',
     subtitle: 'Web + iOS modes',
-    bg: '#64748b',
-    modes: ['Web', 'iOS'],
-    items: [
-      'Display/Large · Heading/H1–H4',
-      'Body/Large · Medium · Small',
-      'Label/Large · Medium · Small',
-      'Caption/Medium',
-      'Numeric/Display · Large · Medium · Small',
+    theme: 'blue',
+    pills: ['Display/Large', 'Heading/H1–H4', 'Body/Sm–Lg', 'Label/Sm–Lg', 'Numeric'],
+    modes: [
+      { label: 'Web', active: true },
+      { label: 'iOS' },
     ],
-    footnote: 'Aliases Primitive Typography',
   },
   {
-    title: 'Semantic Layout',
-    subtitle: 'Spacing, radius, elevation',
-    bg: '#475569',
-    items: [
-      'Page Padding / Section Gap / Content Gap',
-      'Button Radius / Card Radius / Modal Radius',
-      'Card Elevation / Modal Elevation',
-      'Disabled Opacity / Overlay Opacity',
-    ],
-    footnote: 'Never raw values in components',
+    step: '05',
+    title: 'Layout',
+    subtitle: 'Spacing + structure',
+    theme: 'sand',
+    pills: ['Page Padding', 'Card Radius', 'Elevation', 'Gap / Gutter', 'Border Width'],
+  },
+]
+
+export const hierarchyConnectors = ['aliases', 'inherits', 'uses', 'maps to'] as const
+
+export const goldenRules = [
+  { id: 'layers', text: '≠ bypass layers' },
+  { id: 'hardcode', text: '≠ hardcode values' },
+  { id: 'hex', text: '≠ raw hex in JSX' },
+] as const
+
+export const hierarchyStats = [
+  {
+    value: '0',
+    title: 'duplicate screens',
+    description: '2 brands. 1 codebase. Token mode switch.',
+    accent: '#c9902b',
+  },
+  {
+    value: '71',
+    title: 'design decisions',
+    description: 'Primitive + Semantic tokens control every pixel.',
+    accent: '#1a3a6b',
+  },
+  {
+    value: '∞',
+    title: 'brands supportable',
+    description: 'A third brand = 1 new token block. Zero layout changes.',
+    accent: '#1b6b3a',
   },
 ] as const
 
