@@ -167,8 +167,8 @@ export default function TokenArchitectureSection() {
                   return (
                   <tr key={row.style} className="border-b border-[#e8e4dc] last:border-b-0">
                     <td className="px-5 py-4 font-mono text-xs text-[#64748b]">{row.style}</td>
-                    <td className="px-5 py-4 font-mono text-xs">{spec.size}</td>
-                    <td className="px-5 py-4 font-mono text-xs">{spec.lineH}</td>
+                    <td className="px-5 py-4 font-mono text-xs text-[#0c1a2e]">{spec.size}</td>
+                    <td className="px-5 py-4 font-mono text-xs text-[#0c1a2e]">{spec.lineH}</td>
                     <td className="px-5 py-4 text-xs text-[#64748b]">{spec.weight}</td>
                     <td className="px-5 py-4 text-[#0c1a2e]">
                       <span className={row.sampleClass}>{row.sample}</span>
@@ -306,13 +306,13 @@ export default function TokenArchitectureSection() {
                       <td className="px-5 py-4">
                         <div className="flex items-center gap-2">
                           <ColorSwatch color={row.enbd} />
-                          <span className="font-mono text-xs">{row.enbd}</span>
+                          <span className="font-mono text-xs text-[#0c1a2e]">{row.enbd}</span>
                         </div>
                       </td>
                       <td className="px-5 py-4">
                         <div className="flex items-center gap-2">
                           <ColorSwatch color={row.ei} />
-                          <span className="font-mono text-xs">{row.ei}</span>
+                          <span className="font-mono text-xs text-[#0c1a2e]">{row.ei}</span>
                         </div>
                       </td>
                       <td className="px-5 py-4 font-mono text-xs text-[#64748b]">{row.alias}</td>
