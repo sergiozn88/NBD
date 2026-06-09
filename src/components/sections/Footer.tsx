@@ -6,6 +6,7 @@ const navLinks = [
   { label: 'Personas', to: '/#personas' },
   { label: 'Journey', to: '/#journey' },
   { label: 'System', to: '/#system' },
+  { label: 'Tokens', to: '/#token-architecture' },
   { label: 'Rationale', to: '/design-rationale' },
 ] as const
 

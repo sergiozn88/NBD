@@ -9,6 +9,7 @@ import JourneySection from '../components/sections/JourneySection'
 import OverviewSection from '../components/sections/OverviewSection'
 import PersonasSection from '../components/sections/PersonasSection'
 import SystemSection from '../components/sections/SystemSection'
+import TokenArchitectureSection from '../components/sections/TokenArchitectureSection'
 import VisualLanguageSection from '../components/sections/VisualLanguageSection'
 
 export default function HomePage() {
@@ -23,6 +24,7 @@ export default function HomePage() {
         <VisualLanguageSection />
         <IdeationSection />
         <SystemSection />
+        <TokenArchitectureSection />
         <DesignRationaleBanner />
         <DeliverablesSection />
       </main>
