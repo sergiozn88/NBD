@@ -5,6 +5,7 @@ const navLinks = [
   { label: 'Process', to: '/#overview' },
   { label: 'Personas', to: '/#personas' },
   { label: 'Journey', to: '/#journey' },
+  { label: 'IA', to: '/#information-architecture' },
   { label: 'System', to: '/#system' },
   { label: 'Tokens', to: '/#token-architecture' },
   { label: 'Rationale', to: '/design-rationale' },

@@ -5,6 +5,7 @@ import EvidenceSection from '../components/sections/EvidenceSection'
 import Footer from '../components/sections/Footer'
 import Hero from '../components/sections/Hero'
 import IdeationSection from '../components/sections/IdeationSection'
+import InformationArchitectureSection from '../components/sections/InformationArchitectureSection'
 import JourneySection from '../components/sections/JourneySection'
 import OverviewSection from '../components/sections/OverviewSection'
 import PersonasSection from '../components/sections/PersonasSection'
@@ -23,6 +24,7 @@ export default function HomePage() {
         <JourneySection />
         <VisualLanguageSection />
         <IdeationSection />
+        <InformationArchitectureSection />
         <SystemSection />
         <TokenArchitectureSection />
         <DesignRationaleBanner />
